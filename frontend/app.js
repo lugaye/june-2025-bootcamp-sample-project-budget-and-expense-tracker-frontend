@@ -1,5 +1,5 @@
 // app.js
-const API = 'http://localhost:5000/api';
+const API = 'https://budget-and-expense-tracker-backend.onrender.com:5000/api';
 
 const store = {
   token: localStorage.getItem('token') || null,
