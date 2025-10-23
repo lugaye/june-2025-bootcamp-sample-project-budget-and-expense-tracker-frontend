@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Budget Tracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header><h1>Budget & Expense Tracker</h1></header>
+
+    <section id="auth-section">
+      <div id="register-form" class="card">
+        <h3>Register</h3>
+        <input id="reg-name" placeholder="Name">
+        <input id="reg-email" placeholder="Email">
+        <input id="reg-pass" type="password" placeholder="Password">
+        <button id="btn-register">Register</button>
+      </div>
+
+      <div id="login-form" class="card">
+        <h3>Login</h3>
+        <input id="login-email" placeholder="Email">
+        <input id="login-pass" type="password" placeholder="Password">
+        <button id="btn-login">Login</button>
+      </div>
+    </section>
+
+    <section id="app-section" class="hidden">
+      <div class="topbar">
+        <div id="user-info"></div>
+        <button id="btn-logout">Logout</button>
+      </div>
+
+      <div class="row">
+        <div class="card" style="flex:1">
+          <h3>Add Transaction</h3>
+          <select id="tx-category"></select>
+          <select id="tx-type"><option value="expense">Expense</option><option value="income">Income</option></select>
+          <input id="tx-amount" placeholder="Amount" type="number">
+          <input id="tx-date" type="date">
+          <input id="tx-note" placeholder="Note">
+          <button id="btn-add-tx">Add</button>
+          <hr>
+          <h4>Set Budget</h4>
+          <select id="budget-category"></select>
+          <input id="budget-month" placeholder="2025-06" value="">
+          <input id="budget-amount" placeholder="Limit">
+          <button id="btn-set-budget">Set Budget</button>
+        </div>
+
+        <div class="card" style="flex:1">
+          <h3>Dashboard</h3>
+          <canvas id="pieChart" width="300" height="200"></canvas>
+          <hr>
+          <h4>Transactions</h4>
+          <ul id="tx-list"></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
